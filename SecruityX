@@ -1,12 +1,5 @@
 x = menu.add_submenu("Secruity X")
 
-exports.notif:SendNotification({
-	text = "Test text.",
-	type = 'topRight',
-	timeout = 6000,
-})
-
-
 x:add_action(
     "Created by @JvyDEV",
     function()
