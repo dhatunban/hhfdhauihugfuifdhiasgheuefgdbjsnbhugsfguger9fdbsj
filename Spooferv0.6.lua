@@ -1,4 +1,4 @@
-require_game_build(2824)
+require_game_build(2845)
 local spoof = menu.add_submenu("Stat Spoofer")
 
 local function Text(text)
