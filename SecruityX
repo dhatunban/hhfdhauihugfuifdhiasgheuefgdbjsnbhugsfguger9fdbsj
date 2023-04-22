@@ -1,5 +1,12 @@
 x = menu.add_submenu("Secruity X")
 
+exports.notif:SendNotification({
+	text = "Test text.",
+	type = 'topRight',
+	timeout = 6000,
+})
+
+
 x:add_action(
     "Created by @JvyDEV",
     function()
@@ -102,3 +109,97 @@ x:add_action(
     function()
     end
 )
+
+
+x:add_action("Add Badsport", function() 
+stats.set_int("MPPLY_BADSPORT_MESSAGE", -1) 
+stats.set_int("MPPLY_BECAME_BADSPORT_NUM", -1) 
+stats.set_float("MPPLY_OVERALL_BADSPORT", 60000) 
+stats.set_bool("MPPLY_CHAR_IS_BADSPORT", true) 
+globals.set_int(1575015, 0) 
+globals.set_int(1574589, 1) 
+sleep(0.2) 
+globals.set_int(1574589, 0) 
+end)
+
+x:add_action("Remove Badsport", function() 
+stats.set_int("MPPLY_BADSPORT_MESSAGE", 0) 
+stats.set_int("MPPLY_BECAME_BADSPORT_NUM", 0) 
+stats.set_float("MPPLY_OVERALL_BADSPORT", 0) 
+stats.set_bool("MPPLY_CHAR_IS_BADSPORT", false) 
+globals.set_int(1575015, 1) 
+globals.set_int(1574589, 1) 
+sleep(0.2) 
+globals.set_int(1574589, 0) 
+end)
+
+
+x:add_action(
+    "_____________________",
+    function()
+    end
+)
+
+
+x:add_action("Your Reports", function() end)
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+rep = x:add_submenu("View Reports Menu")
+
+rep:add_bare_item("", function() return "Griefing:".. (string.format("%03d", stats.get_int("MPPLY_GRIEFING"))) end, function() end, function()end, function() return end)
+rep:add_bare_item("", function() return "Hacking/Mod Menu:".. (string.format("%03d", stats.get_int("MPPLY_EXPLOITS"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Bug Exploits:".. (string.format("%03d", stats.get_int("MPPLY_GAME_EXPLOITS"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Text Chat:Annoying Me:".. (string.format("%03d", stats.get_int("MPPLY_TC_ANNOYINGME"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Text Chat:Using Hate Speech:".. (string.format("%03d", stats.get_int("MPPLY_TC_HATE"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Voice Chat:Annoying Me:".. (string.format("%03d", stats.get_int("MPPLY_VC_ANNOYINGME"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Voice Chat:Using Hate Speech:".. (string.format("%03d", stats.get_int("MPPLY_VC_HATE"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Offensive Language:".. (string.format("%03d", stats.get_int("MPPLY_OFFENSIVE_LANGUAGE"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Offensive Tagplate:".. (string.format("%03d", stats.get_int("MPPLY_OFFENSIVE_TAGPLATE"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Offensive Content:".. (string.format("%03d", stats.get_int("MPPLY_OFFENSIVE_UGC"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Bad Crew Name:".. (string.format("%03d", stats.get_int("MPPLY_BAD_CREW_NAME"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Bad Crew Motto:".. (string.format("%03d", stats.get_int("MPPLY_BAD_CREW_MOTTO"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Bad Crew Status:".. (string.format("%03d", stats.get_int("MPPLY_BAD_CREW_STATUS"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Bad Crew Emblem:".. (string.format("%03d", stats.get_int("MPPLY_BAD_CREW_EMBLEM"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Friendly:".. (string.format("%03d", stats.get_int("MPPLY_FRIENDLY"))) end, function() end, function()end, function()end)
+rep:add_bare_item("", function() return "Helpful:".. (string.format("%03d", stats.get_int("MPPLY_HELPFUL"))) end, function() end, function()end, function()end)
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+del = pro:add_submenu("Delete Reports")
+
+del:add_action("Active Delete Reports", function()
+    stats.set_int("MPPLY_REPORT_STRENGTH", 0)
+    stats.set_int("MPPLY_COMMEND_STRENGTH", 0)
+    stats.set_int("MPPLY_FRIENDLY", 0)
+    stats.set_int("MPPLY_GRIEFING", 0)
+    stats.set_int("MPPLY_VC_ANNOYINGME", 0)
+    stats.set_int("MPPLY_VC_HATE", 0)
+    stats.set_int("MPPLY_TC_ANNOYINGME", 0)
+    stats.set_int("MPPLY_TC_HATE", 0)
+    stats.set_int("MPPLY_OFFENSIVE_LANGUAGE", 0)
+    stats.set_int("MPPLY_OFFENSIVE_TAGPLATE", 0)
+    stats.set_int("MPPLY_OFFENSIVE_UGC", 0)
+    stats.set_int("MPPLY_BAD_CREW_NAME", 0)
+    stats.set_int("MPPLY_BAD_CREW_MOTTO", 0)
+    stats.set_int("MPPLY_BAD_CREW_STATUS", 0)
+    stats.set_int("MPPLY_BAD_CREW_EMBLEM", 0)
+    stats.set_int("MPPLY_EXPLOITS", 0)
+    stats.set_int("MPPLY_BECAME_BADSPORT_NUM", 0)
+    stats.set_int("MPPLY_DESTROYED_PVEHICLES", 0)
+    stats.set_int("MPPLY_BADSPORT_MESSAGE", 0)
+    stats.set_int("MPPLY_GAME_EXPLOITS", 0)
+    stats.set_int("MPPLY_PLAYER_MENTAL_STATE", 0)
+    stats.set_int("MPPLY_PLAYERMADE_TITLE", 0)
+    stats.set_int("MPPLY_PLAYERMADE_DESC", 0)
+
+    stats.set_int("MPPLY_ISPUNISHED", 0)
+    stats.set_int("MPPLY_WAS_I_BAD_SPORT", 0)
+    stats.set_int("MPPLY_WAS_I_CHEATER", 0)
+    stats.set_int("MPPLY_CHAR_IS_BADSPORT", 0)
+
+    stats.set_int("MPPLY_OVERALL_BADSPORT", 0)
+    stats.set_int("MPPLY_OVERALL_CHEAT", 0)
+
+end)
