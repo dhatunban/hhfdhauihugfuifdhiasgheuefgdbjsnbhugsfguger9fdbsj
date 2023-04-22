@@ -160,7 +160,7 @@ rep:add_bare_item("", function() return "Helpful:".. (string.format("%03d", stat
 
 --------------------------------------------------------------------------------------------------------------------
 
-del = pro:add_submenu("Delete Reports")
+del = x:add_submenu("Delete Reports")
 
 del:add_action("Active Delete Reports", function()
     stats.set_int("MPPLY_REPORT_STRENGTH", 0)
